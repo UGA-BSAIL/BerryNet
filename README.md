@@ -39,20 +39,20 @@ pip install git+https://github.com/facebookresearch/segment-anything.git
 
 ## Environment Setting
 Clone the repository to local machine:
-'''
+```
 git clone https://github.com/UGA-BSAIL/BerryNet.git
-'''
+```
 Create a virtual env and Install the required packages :
-'''
+```
 conda create -n BerryNet python=3.8
 conda activate BerryNet
 pip install ultralytics
 pip install git+https://github.com/facebookresearch/segment-anything.git
-'''
+```
 We modified the original YOLOv8 repository for more module support (yolov8-BerryNet\ultralytics\nn\extra_modules). For letting ultralytics point to the modified repository, 
-'''
+```
 pip uninstall ultralytics
-'''
+```
 
 ## Dataset Download
 This paper released four datasets for comprhensive research of blueberry, which are availiable on kaggle:
@@ -65,9 +65,9 @@ This paper released four datasets for comprhensive research of blueberry, which 
 ## SAM-based Pixel-wise labeling
 This method requred the detection dataset as the initial prompt, and weight of maturity classifier and SAM for inference.
 MOdified the path of the dataset and the model in the script of SAM-based-labeling.py:
-'''
+```
 python script\pixle-wise_labeling.py
-'''
+```
   Parameters:
     - image_folder = '/path/to/image_folder'
     - annotation_folder = '/path/to/annotation_folder'
@@ -78,10 +78,10 @@ python script\pixle-wise_labeling.py
 ## Model Training
 BerryNet's architecture was defined in yolov8-BerryNet\ultralytics\models\v8\yolov8-c2f_faster-p2-bifpn-seg.yaml.
 For training the model, run the script of train_blueberry_c2f-faster_p2_bifpn_seg_640.py (larger model select the 1280) under the path of yolov8-BerryNet folder:
-'''
+```
 cd yolov8-BerryNet
 python train_blueberry_c2f-faster_p2_bifpn_seg_640.py
-'''
+```
 Before running the script, please modify the path of the dataset and the model configuration file in the script. 
 You can try more yaml files for different model architecture.
 
@@ -96,9 +96,9 @@ The pre-trained models are available at [weight](weight).
 
 ## Model Inference
 For model inference, run the script of BerryNet_phenotyping_extraction_split.py under the script folder:
-'''
+```
 python script\BerryNet_phenotyping_extraction_split.py
-'''
+```
   Parameters:
     - model_path = " "    # path to the BerryNet model
     - image_folder = " "  # path to the image folder
