@@ -69,10 +69,10 @@ MOdified the path of the dataset and the model in the script of SAM-based-labeli
 python script\pixle-wise_labeling.py
 ```
   Parameters:
-    - image_folder = '/path/to/image_folder'
-    - annotation_folder = '/path/to/annotation_folder'
-    - checkpoint = torch.load('/path/to/best_model.pth', map_location=torch.device('cpu'))  # path to the maturity classifier
-    - sam_checkpoint = "/path/to/sam_vit_h_4b8939.pth"  # path to the SAM model
+    - image_folder = '/path/to/image_folder'  
+    - annotation_folder = '/path/to/annotation_folder'  
+    - checkpoint = torch.load('/path/to/best_model.pth', map_location=torch.device('cpu'))  # path to the maturity classifier  
+    - sam_checkpoint = "/path/to/sam_vit_h_4b8939.pth"  # path to the SAM model  
 
 
 ## Model Training
@@ -88,9 +88,9 @@ You can try more yaml files for different model architecture.
 
 ## Pretrained models
 The pre-trained models are available at [weight](weight).
-    - Maturity_classifier: 
-    - Segment Anything Model:
-    - Cluster Detection:
+    - Maturity_classifier:  
+    - Segment Anything Model:  
+    - Cluster Detection:  
     - Fruit Segmentaiton:  
 
 
@@ -100,9 +100,9 @@ For model inference, run the script of BerryNet_phenotyping_extraction_split.py 
 python script\BerryNet_phenotyping_extraction_split.py
 ```
   Parameters:
-    - model_path = " "    # path to the BerryNet model
-    - image_folder = " "  # path to the image folder
-    - save_path = " "     # path to the save folder
+    - model_path = " "    # path to the BerryNet model  
+    - image_folder = " "  # path to the image folder  
+    - save_path = " "     # path to the save folder  
 
 
 ## References
