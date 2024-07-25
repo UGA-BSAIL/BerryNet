@@ -18,9 +18,9 @@ The repository is for the paper: Enhancing In-Field Robotic Blueberry Fruit Phen
 
 ## BerryNet Architecture
 <p align="center">
-  <img src="figures/fig7_BerryNet-architecture_.jpg" alt="Figure 7. Illustration of the BerryNet framework. It incorporated three major enhancements: 1) enhancing P2 layer to better capture features of small objects; 2) implementing BiFPN for improved feature fusion, and 3) replacing C2f block with the more efficient C2f-faster block to accelerate inference. " style="width: 70%;">
+  <img src="figures/fig7_BerryNet-architecture_.jpg" alt="Figure 3. Illustration of the BerryNet framework. It incorporated three major enhancements: 1) enhancing P2 layer to better capture features of small objects; 2) implementing BiFPN for improved feature fusion, and 3) replacing C2f block with the more efficient C2f-faster block to accelerate inference. " style="width: 70%;">
 </p>
-<p align="center"><i>Figure 7. Illustration of the BerryNet framework. It incorporated three major enhancements: 1) enhancing P2 layer to better capture features of small objects; 2) implementing BiFPN for improved feature fusion, and 3) replacing C2f block with the more efficient C2f-faster block to accelerate inference. </i></p>
+<p align="center"><i>Figure 3. Illustration of the BerryNet framework. It incorporated three major enhancements: 1) enhancing P2 layer to better capture features of small objects; 2) implementing BiFPN for improved feature fusion, and 3) replacing C2f block with the more efficient C2f-faster block to accelerate inference. </i></p>
 
 
 
@@ -28,18 +28,31 @@ The repository is for the paper: Enhancing In-Field Robotic Blueberry Fruit Phen
 
 [YOLOv8](https://github.com/ultralytics/ultralytics)
 ```
- pip install ultralytics
+pip install ultralytics
 ```
-[Segment Anything Model]([https://github.com/ultralytics/ultralytics](https://github.com/facebookresearch/segment-anything))
+[Segment Anything Model](https://github.com/ultralytics/ultralytics)
 ```
 pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
 
 
 
-## Getting Started
-See 
-
+## Environment Setting
+Clone the repository to local machine:
+'''
+git clone https://github.com/UGA-BSAIL/BerryNet.git
+'''
+Create a virtual env and Install the required packages :
+'''
+conda create -n BerryNet python=3.8
+conda activate BerryNet
+pip install ultralytics
+pip install git+https://github.com/facebookresearch/segment-anything.git
+'''
+We modified the original YOLOv8 repository for more module support (yolov8-BerryNet\ultralytics\nn\extra_modules). For letting ultralytics point to the modified repository, 
+'''
+pip uninstall ultralytics
+'''
 
 ## Dataset Download
 This paper released four datasets for comprhensive research of blueberry, which are availiable on kaggle:
@@ -49,11 +62,47 @@ This paper released four datasets for comprhensive research of blueberry, which 
   * [Blueberry Cluster Detection](https://www.kaggle.com/datasets/zhengkunli3969/blueberry-cluster-detection)
 
 
+## SAM-based Pixel-wise labeling
+This method requred the detection dataset as the initial prompt, and weight of maturity classifier and SAM for inference.
+MOdified the path of the dataset and the model in the script of SAM-based-labeling.py:
+'''
+python script\pixle-wise_labeling.py
+'''
+  Parameters:
+    - image_folder = '/path/to/image_folder'
+    - annotation_folder = '/path/to/annotation_folder'
+    - checkpoint = torch.load('/path/to/best_model.pth', map_location=torch.device('cpu'))  # path to the maturity classifier
+    - sam_checkpoint = "/path/to/sam_vit_h_4b8939.pth"  # path to the SAM model
+
+
+## Model Training
+BerryNet's architecture was defined in yolov8-BerryNet\ultralytics\models\v8\yolov8-c2f_faster-p2-bifpn-seg.yaml.
+For training the model, run the script of train_blueberry_c2f-faster_p2_bifpn_seg_640.py (larger model select the 1280) under the path of yolov8-BerryNet folder:
+'''
+cd yolov8-BerryNet
+python train_blueberry_c2f-faster_p2_bifpn_seg_640.py
+'''
+Before running the script, please modify the path of the dataset and the model configuration file in the script. 
+You can try more yaml files for different model architecture.
+
 
 ## Pretrained models
-The pre-trained models are available at [weight](weight). All the weights are YOLOv8n trained with different synthesized data.  
-    - best.pt: trained with images generated from DT/MARs-CycleGAN (ours).  
-    - CYC.pt: trained with  images generated from original CycleGAN.  
+The pre-trained models are available at [weight](weight).
+    - Maturity_classifier: 
+    - Segment Anything Model:
+    - Cluster Detection:
+    - Fruit Segmentaiton:  
+
+
+## Model Inference
+For model inference, run the script of BerryNet_phenotyping_extraction_split.py under the script folder:
+'''
+python script\BerryNet_phenotyping_extraction_split.py
+'''
+  Parameters:
+    - model_path = " "    # path to the BerryNet model
+    - image_folder = " "  # path to the image folder
+    - save_path = " "     # path to the save folder
 
 
 ## References
