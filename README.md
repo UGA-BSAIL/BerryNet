@@ -8,6 +8,11 @@ The repository is for the paper: Enhancing In-Field Robotic Blueberry Fruit Phen
 <img src="figures/fig1_diagram.jpg"/>
 Fig. 1: Diagram of the proposed blueberry fruit phenotyping workflow involving four stages: data collection, training dataset generation, model training, and phenotyping traits extraction.
 
+<p align="center">
+  <img src="figures/fig1_diagram.jpg" alt="Fig. 1: Diagram of the proposed blueberry fruit phenotyping workflow involving four stages: data collection, training dataset generation, model training, and phenotyping traits extraction." style="width: 70%;">
+</p>
+<p align="center"><i>Fig. 1: Diagram of the proposed blueberry fruit phenotyping workflow involving four stages: data collection, training dataset generation, model training, and phenotyping traits extraction.</i></p>
+
 
 <p align="center">
   <img src="figures/fig4_SAM-based-labeling.jpg" alt="Figure 2. Illustration of the proposed automated pixel-wise label generation process for blueberry fruits at different maturiety stages. (a) Bounding boxes from a previous detection dataset (Z. Li et al., 2023); (b) Bounding boxes re-classified into three categories: immature (yellow), semi-mature(red), and mature (blue), using a maturity classifier; (c) Pixel-wise mask labels generated using the Segment Anything Model." style="width: 70%;">
@@ -32,11 +37,15 @@ Fig. 1: Diagram of the proposed blueberry fruit phenotyping workflow involving f
 
 
 ## Getting Started
-See [GANs](GAN/GAN)
+See 
 
 
 ## Dataset Download
-The dataset has been released on [Kaggle](https://www.kaggle.com/datasets/zhengkunli3969/dtmars-cyclegan). Also, you can download on [Google Drive](https://drive.google.com/drive/folders/12pb47Zl1j285z5AXG8F77oASkfYqSbA0?usp=sharing).
+This paper released four datasets for comprhensive research of blueberry, which are availiable on kaggle:
+  * [Blueberry Fruit Detection](https://www.kaggle.com/datasets/zhengkunli3969/blueberry-detection-dataset)
+  * [Blueberry Maturity Classification](https://www.kaggle.com/datasets/zhengkunli3969/blueberry-maturiety-classification)
+  * [Blueberry Pixel-wise Segmentation](https://www.kaggle.com/datasets/zhengkunli3969/blueberry-segmentation-with-segment-anything-model)
+  * [Blueberry Cluster Detection](https://www.kaggle.com/datasets/zhengkunli3969/blueberry-cluster-detection)
 
 
 
