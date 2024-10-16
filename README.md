@@ -4,7 +4,7 @@ Enhancing In-Field Robotic Blueberry Fruit Phenotyping: Customized BerryNet Thro
 The repository is for the paper: Enhancing In-Field Robotic Blueberry Fruit Phenotyping: Customized BerryNet Through Learning Pixel-wise Labels from Segment Anything Model (SAM), including the code and dataset for reproducing. 
 
 
-## Pipeline of DT/MARS-CycleGAN
+## Pipeline
 <p align="center">
   <img src="figures/fig1_diagram_.jpg" alt="Fig. 1: Diagram of the proposed blueberry fruit phenotyping workflow involving four stages: data collection, training dataset generation, model training, and phenotyping traits extraction." style="width: 70%;">
 </p>
