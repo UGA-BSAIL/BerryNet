@@ -109,5 +109,22 @@ python script\BerryNet_phenotyping_extraction_split.py
 If you find this work or code useful, please cite:
 
 ```
-****************************
+@article{li2025field,
+  title={In-field blueberry fruit phenotyping with a MARS-PhenoBot and customized BerryNet},
+  author={Li, Zhengkun and Xu, Rui and Li, Changying and Munoz, Patricio and Takeda, Fumiomi and Leme, Bruno},
+  journal={Computers and Electronics in Agriculture},
+  volume={232},
+  pages={110057},
+  year={2025},
+  publisher={Elsevier}
+}
+
+@inproceedings{li2023blueberry,
+  title={Blueberry Yield Estimation Through Multi-View Imagery with YOLOv8 Object Detection},
+  author={Li, Zhengkun and Li, Changying and Munoz, Patricio},
+  booktitle={2023 ASABE Annual International Meeting},
+  pages={1},
+  year={2023},
+  organization={American Society of Agricultural and Biological Engineers}
+}
 ```
